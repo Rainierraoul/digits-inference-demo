@@ -94,9 +94,10 @@ docker run --rm -p 127.0.0.1:8000:8000 digits-inference
 
 The multi-stage Dockerfile trains at build time and copies the model into the
 serving image. Serving runs as a non-root user. GitHub Actions trains the model,
-runs the integration tests and builds the container. Docker and the hosted
-workflow were not executed during local validation because Docker is unavailable
-in that environment; their first execution remains a separate check.
+runs the integration tests and builds the container. The
+[published GitHub Actions run](https://github.com/Rainierraoul/digits-inference-demo/actions/runs/37259164083)
+passed training, all 10 tests and the Docker build on 5 October 2026. Docker is
+unavailable locally; the container build was verified on the hosted runner.
 
 ## Limits and engineering choices
 
